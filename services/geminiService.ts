@@ -240,7 +240,7 @@ export const fetchGeminiSuggestions = async (
     const cartSummary = cart.map(item => `"${item.quantity}x ${item.name}"`).join(", ");
 
     // 4. Call Gemini API Directly
-    const apiKey = process.env.API_KEY;
+    const apiKey = import.meta.env.VITE_API_KEY;
     if (!apiKey) {
       console.warn("API Key missing in process.env");
       return null;
